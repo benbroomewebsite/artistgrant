@@ -4,7 +4,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Artist Grant',
-  description: 'Artist Grant provides unrestricted financial support to artists worldwide.',
+  description: 'Artist Grant provides unrestricted financial support to artists worldwide. Learn about the grant, judges, shortlisting process, previous winners, and terms and conditions.',
   generator: 'Next.js',
   icons: {
     icon: [
