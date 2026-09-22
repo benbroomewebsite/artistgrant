@@ -159,31 +159,33 @@
   body {
     margin: 0;
     background: #dedede;
-    color: #1e1e1e;
-    font-family: Georgia, 'Times New Roman', serif;
+    color: #000;
+    font-family: 'MS Mincho', 'Courier New', monospace;
+    font-size: 15px;
+    letter-spacing: -0.03em;
   }
   a { color: inherit; }
 }
 
 .site-shell { min-height: 100vh; background: #dedede; }
-.skip-link { position: absolute; left: -9999px; top: 0; padding: 0.75rem 1rem; background: #fff; z-index: 10; }
-.skip-link:focus { left: 1rem; top: 1rem; }
-.site-header { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem 5rem; text-align: center; }
-.wordmark { display: inline-block; font-size: 1.35rem; font-weight: 700; text-decoration: none; margin-bottom: 1.65rem; }
-.nav-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem 2rem; padding: 0; margin: 0; list-style: none; font-size: 1.1rem; }
+.skip-link { position: absolute; left: -9999px; top: 0; }
+.skip-link:focus { left: 1rem; top: 1rem; padding: 0.75rem 1rem; background: #fff; z-index: 10; }
+.site-header { display: flow-root; height: 160.1px; box-sizing: border-box; text-align: center; font-size: 1.3575vw; line-height: 1; }
+.wordmark { display: block; width: fit-content; margin: 37.6px auto 30px; font-size: 1.3575vw; line-height: 1.4; font-weight: 700; text-decoration: none; }
+.nav-list { display: flex; justify-content: center; gap: 39.2px; padding: 0; margin: 0; list-style: none; font-size: 1.3575vw; line-height: 1.7; }
 .nav-list a { text-decoration: none; }
 .nav-list a:hover, .nav-list a:focus-visible, .content-column a:hover, .content-column a:focus-visible { text-decoration: underline; text-underline-offset: 0.18em; }
-.content-column { max-width: 842px; margin: 0 auto; padding: 0 1.5rem 7rem; font-size: clamp(1.05rem, 1.45vw, 1.3rem); line-height: 1.6; letter-spacing: 0.02em; }
-.content-column p { margin: 0 0 3.2rem; }
-.content-column .announcement { margin-bottom: 4.6rem; line-height: 1.45; letter-spacing: 0; }
+.content-column { width: 65.44%; margin: 52.8px auto 0; padding: 0; font-size: 1.3575vw; line-height: 1.5; letter-spacing: -0.03em; }
+.content-column p { margin: 0 0 15px; }
 .content-column a { text-underline-offset: 0.16em; }
-.supporters { margin: -1.6rem 0 0; padding: 0; list-style: none; line-height: 1.7; }
-.site-footer { border-top: 1px solid rgba(30,30,30,0.35); max-width: 842px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; font-size: 1.05rem; }
-.site-footer h2 { margin: 0 0 0.35rem; font-size: 1rem; font-weight: 400; }
+.site-footer { width: 65.44%; box-sizing: border-box; margin: 0 auto; padding: 0 0 60px; font-size: 1.3575vw; line-height: 1.5; }
+.site-footer h2 { margin: 0; font-size: inherit; font-weight: 400; }
 .site-footer a { text-underline-offset: 0.16em; }
 @media (max-width: 640px) {
-  .site-header { padding: 1.5rem 1.25rem 4rem; }
-  .nav-list { gap: 0.7rem 1.2rem; font-size: 1rem; }
-  .content-column { padding-inline: 1.25rem; font-size: 1.05rem; }
-  .content-column p { margin-bottom: 2.5rem; }
+  .site-header { height: 120px; }
+  .wordmark { margin-top: 26px; margin-bottom: 20px; font-size: 5vw; }
+  .site-header, .content-column, .site-footer { font-size: 5vw; }
+  .nav-list { gap: 16px; flex-wrap: wrap; font-size: 5vw; }
+  .content-column { width: 86%; margin-top: 38px; }
+  .site-footer { width: 86%; }
 }
