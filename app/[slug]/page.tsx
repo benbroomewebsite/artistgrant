@@ -1,11 +1,31 @@
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { judges, terms, TextPage } from '@/components/site-layout'
+
+const pageMeta = {
+  judges: ['Judges | Artist Grant', 'Meet the Artist Grant 2026 judging panel.'],
+  shortlisting: ['Shortlisting | Artist Grant', 'Learn how Artist Grant 2026 applications will be shortlisted.'],
+  previouswinners: ['Previous Winners | Artist Grant', 'Explore previous Artist Grant recipients.'],
+  tandcs: ['Terms and Conditions | Artist Grant', 'Read the Artist Grant 2026 eligibility, assessment, application, and judging terms.'],
+} as const
+
+export function generateStaticParams() {
+  return Object.keys(pageMeta).map((slug) => ({ slug }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const meta = pageMeta[slug as keyof typeof pageMeta]
+  return meta ? { title: meta[0], description: meta[1] } : {}
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   if (slug === 'judges') return <JudgesPage />
   if (slug === 'shortlisting') return <ShortlistingPage />
   if (slug === 'previouswinners') return <PreviousWinnersPage />
-  return <TermsPage />
+  if (slug === 'tandcs') return <TermsPage />
+  notFound()
 }
 
 function JudgesPage() {
