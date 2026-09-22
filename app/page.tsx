@@ -33,8 +33,7 @@ export default function Page() {
       </article>
 
       <footer className="site-footer">
-        <h2>Contact</h2>
-        <a href="mailto:ben@drawingablank.co.uk">ben@drawingablank.co.uk</a>
+        <a href="mailto:ben@drawingablank.co.uk">Contact</a>
       </footer>
     </main>
   )

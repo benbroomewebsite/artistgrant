@@ -178,8 +178,7 @@
 .content-column { width: 65.44%; margin: 52.8px auto 0; padding: 0; font-size: 1.3575vw; line-height: 1.5; letter-spacing: -0.03em; }
 .content-column p { margin: 0 0 15px; }
 .content-column a { text-underline-offset: 0.16em; }
-.site-footer { width: 65.44%; box-sizing: border-box; margin: 0 auto; padding: 0 0 60px; font-size: 1.3575vw; line-height: 1.5; }
-.site-footer h2 { margin: 0; font-size: inherit; font-weight: 400; }
+.site-footer { width: 100%; box-sizing: border-box; margin: 0; padding: 520px 0 60px; text-align: center; font-size: 1.3575vw; line-height: 1.5; }
 .site-footer a { text-underline-offset: 0.16em; }
 @media (max-width: 640px) {
   .site-header { height: 120px; }
@@ -187,5 +186,5 @@
   .site-header, .content-column, .site-footer { font-size: 5vw; }
   .nav-list { gap: 16px; flex-wrap: wrap; font-size: 5vw; }
   .content-column { width: 86%; margin-top: 38px; }
-  .site-footer { width: 86%; }
+  .site-footer { padding-top: 360px; }
 }
