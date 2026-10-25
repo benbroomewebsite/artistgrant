@@ -19,25 +19,25 @@ export const judgeImages = [
 export const shortlistImage = mediaUrl('/media/shortlisting/nc2026-group-014-ruth-samuels-3a00d35f.jpg')
 
 export const winnerYears = [
-  { year: '2024', cover: '/media/previouswinners-2024grant-ntd96/image-processing20241127-2-318gdw-d5a40254.jpg', images: [
+  { year: '2024', cover: '/media/previouswinners-2024grant-ntd96/mg-9750-d7e86435.jpg', images: [
     '/media/previouswinners-2024grant-ntd96/image-processing20241127-2-318gdw-d5a40254.jpg',
     '/media/previouswinners-2024grant-ntd96/rat-section-announcement-ba97fdab.jpg',
     '/media/previouswinners-2024grant-ntd96/mg-9750-d7e86435.jpg',
   ] },
-  { year: '2023', cover: '/media/previouswinners-2023grant/morgan-still-6c097205.png', images: [
+  { year: '2023', cover: '/media/previouswinners-2023grant/andina-1f60b61e.jpg', images: [
     '/media/previouswinners-2023grant/morgan-still-6c097205.png',
     '/media/previouswinners-2023grant/ceidra-b3bfdcbc.jpg',
     '/media/previouswinners-2023grant/andina-1f60b61e.jpg',
     '/media/previouswinners-2023grant/mati-still-df4a5140.png',
     '/media/previouswinners-2023grant/coaley-peak-a-fragment-2021-film-still-16ddb582.jpg',
   ] },
-  { year: '2022', cover: '/media/previouswinners-2022grant-8clt8/artistgrant-4-33f9e48d.jpg', images: [
+  { year: '2022', cover: '/media/previouswinners-2022grant-8clt8/11-copy-blured-1-2-ec4918b6.jpg', images: [
     '/media/previouswinners-2022grant-8clt8/artistgrant-4-33f9e48d.jpg',
     '/media/previouswinners-2022grant-8clt8/artistgrant-1-df47f5a6.jpg',
     '/media/previouswinners-2022grant-8clt8/artistgrant-2-c96a2b56.jpg',
     '/media/previouswinners-2022grant-8clt8/artistgrant-3-a535dba8.jpg',
   ] },
-  { year: '2021', cover: '/media/previouswinners-2021grant-sbbp8/jesus-hillario-reyes-1-570f8b35.jpg', images: [
+  { year: '2021', cover: '/media/previouswinners-2021grant-sbbp8/abdulhamid-kircher-a3faf429.jpg', images: [
     '/media/previouswinners-2021grant-sbbp8/jesus-hillario-reyes-1-570f8b35.jpg',
     '/media/previouswinners-2021grant-sbbp8/abdulhamid-kircher-a3faf429.jpg',
     '/media/previouswinners-2021grant-sbbp8/daniel-mebarek-2-da1c82c7.jpg',

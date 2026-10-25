@@ -1,26 +1,14 @@
 import type { ReactNode } from 'react'
-
-const navigation = [
-  ['Apply', '/'],
-  ['Judges', '/judges'],
-  ['Shortlisting', '/shortlisting'],
-  ['Previous Winners', '/previouswinners'],
-  ['T&Cs', '/tandcs'],
-] as const
+import Link from 'next/link'
+import { SiteNavigation } from './site-navigation'
 
 export function SiteLayout({ children, active }: { children: ReactNode; active?: string }) {
   return (
     <main className="site-shell">
       <a className="skip-link" href="#content">Skip to Content</a>
       <header className="site-header">
-        <a className="wordmark" href="/">Artist Grant</a>
-        <nav aria-label="Main navigation">
-          <ul className="nav-list">
-            {navigation.map(([label, href]) => (
-              <li key={label}><a className={active === label ? 'is-active' : undefined} href={href}>{label}</a></li>
-            ))}
-          </ul>
-        </nav>
+        <Link className="wordmark" href="/">Artist Grant</Link>
+        <SiteNavigation active={active} />
       </header>
       <div id="content">{children}</div>
       <footer className="site-footer"><a href="mailto:ben@drawingablank.co.uk">Contact</a></footer>

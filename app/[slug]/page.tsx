@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import { SiteImage as Image } from '@/components/site-image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { judges, terms, TextPage } from '@/components/site-layout'
 import { judgeImages, shortlistImage, winnerYears } from '@/lib/media'
 import { mediaUrl } from '@/lib/media-url'
+import { judgeImageSizes } from '@/lib/image-source'
 
 const pageMeta = {
   judges: ['Judges | Artist Grant', 'Meet the Artist Grant 2026 judging panel.'],
@@ -38,15 +39,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 }
 
 function JudgesPage() {
-  return <TextPage active="Judges"><div className="judge-grid">{judges.map((name, index) => <div className="judge-card" key={name}><div className="image-space judge-image"><Image src={judgeImages[index]} alt="" fill sizes="(max-width: 640px) 43vw, 14vw" /></div><p>{name}</p></div>)}</div></TextPage>
+  return <TextPage active="Judges" className="judges-page"><div className="judge-grid">{judges.map((name, index) => <div className="judge-card" key={name}><div className="image-space judge-image"><Image src={judgeImages[index]} alt={name} fill sizes={judgeImageSizes} loading={index < 6 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : 'auto'} /></div><p>{name}</p></div>)}</div></TextPage>
 }
 
 function ShortlistingPage() {
-  return <TextPage active="Shortlisting" className="shortlisting-page"><p>Shortlisting of Artist Grant 2026 will implemented by the <a href="https://www.newcurators.org/" rel="noreferrer">2026 New Curators Fellows</a> (from left to right): <a href="https://www.instagram.com/juanfelipeparedes/" rel="noreferrer">Juan Felipe Paredes</a>, <a href="https://www.instagram.com/markmingucho/" rel="noreferrer">Mark Cho</a>, <a href="https://www.instagram.com/dulceariadnna/" rel="noreferrer">Dulce Ariadna Ardila</a>, <a href="https://www.instagram.com/5tsan/" rel="noreferrer">Vy Tsan</a>, <a href="https://www.instagram.com/seth.kriger/" rel="noreferrer">Seth Kriger</a>, <a href="https://www.instagram.com/alohavip/" rel="noreferrer">Nana Ampofo</a>, <a href="https://www.instagram.com/ladyhaitie/" rel="noreferrer">Runnie Exuma</a>, <a href="https://www.instagram.com/b_daialal/" rel="noreferrer">Bijal Daialal</a>, <a href="https://www.instagram.com/sadiemaybnot/" rel="noreferrer">Sadie Barnett</a>, <a href="https://www.instagram.com/ruchika_blog/" rel="noreferrer">Ruchika Dhillon</a> and <a href="https://www.instagram.com/chrisdreeder/" rel="noreferrer">chris d. reeder</a></p><div className="image-space shortlist-image"><Image src={shortlistImage} alt="The 2026 New Curators Fellows" fill loading="eager" sizes="(max-width: 640px) 86vw, 56vw" /></div></TextPage>
+  return <TextPage active="Shortlisting" className="shortlisting-page"><p>Shortlisting of Artist Grant 2026 will implemented by the <a href="https://www.newcurators.org/" rel="noreferrer">2026 New Curators Fellows</a> (from left to right): <a href="https://www.instagram.com/juanfelipeparedes/" rel="noreferrer">Juan Felipe Paredes</a>, <a href="https://www.instagram.com/markmingucho/" rel="noreferrer">Mark Cho</a>, <a href="https://www.instagram.com/dulceariadnna/" rel="noreferrer">Dulce Ariadna Ardila</a>, <a href="https://www.instagram.com/5tsan/" rel="noreferrer">Vy Tsan</a>, <a href="https://www.instagram.com/seth.kriger/" rel="noreferrer">Seth Kriger</a>, <a href="https://www.instagram.com/alohavip/" rel="noreferrer">Nana Ampofo</a>, <a href="https://www.instagram.com/ladyhaitie/" rel="noreferrer">Runnie Exuma</a>, <a href="https://www.instagram.com/b_daialal/" rel="noreferrer">Bijal Daialal</a>, <a href="https://www.instagram.com/sadiemaybnot/" rel="noreferrer">Sadie Barnett</a>, <a href="https://www.instagram.com/ruchika_blog/" rel="noreferrer">Ruchika Dhillon</a> and <a href="https://www.instagram.com/chrisdreeder/" rel="noreferrer">chris d. reeder</a></p><div className="image-space shortlist-image"><Image src={shortlistImage} alt="The 2026 New Curators Fellows" fill loading="eager" sizes="(max-width: 769px) 88vw, 60vw" /></div></TextPage>
 }
 
 function PreviousWinnersPage() {
-  return <TextPage active="Previous Winners" className="winners-page"><h1>Previous Winners</h1><div className="winner-grid">{winnerYears.map(({ year, cover }) => <figure key={year}><Link href={`/previouswinners/${year}`}><div className="image-space winner-image"><Image src={mediaUrl(cover)} alt="" fill sizes="(max-width: 640px) 43vw, 35vw" /></div><figcaption>{year} Grant</figcaption></Link></figure>)}</div></TextPage>
+  return <TextPage active="Previous Winners" className="winners-page"><h1>Previous Winners</h1><div className="winner-grid">{winnerYears.map(({ year, cover }) => <figure key={year}><Link href={`/previouswinners/${year}`}><div className="image-space winner-image"><Image src={mediaUrl(cover)} alt="" fill sizes="(max-width: 769px) 88vw, 40vw" /></div><figcaption>{year} Grant</figcaption></Link></figure>)}</div></TextPage>
 }
 
 function TermsPage() {

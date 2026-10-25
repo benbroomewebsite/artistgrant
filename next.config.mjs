@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './lib/image-loader.ts',
+    deviceSizes: [320, 480, 640, 960, 1440, 1920, 2560],
+    imageSizes: [160],
     remotePatterns: [
       {
         protocol: 'https',

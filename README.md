@@ -36,6 +36,18 @@ The importer reads the live Squarespace sitemap and page blocks, downloads origi
 
 Media is served from Ben's `artistgrant-media` R2 bucket (Cloudflare account `856d30a7c55ce0475ebcac06e973dc57`). Its public origin is `https://pub-8a5603baa7c14b72b81d23aa7715704e.r2.dev`. Set `NEXT_PUBLIC_MEDIA_BASE_URL` to override it, and update the image hostname in `next.config.mjs` when changing origins. `lib/media-paths.json` maps the previous media paths to 33 deduplicated objects (29 images and four videos). The origin can later be replaced with `https://media.artistgrant.co.uk` once DNS and the R2 custom domain are configured.
 
+### Display images and loading
+
+The 29 original images remain archived in R2. Responsive WebP versions live under `media/display/`, with widths from 160 to 2560 pixels, capped at each source's natural width. `lib/image-variants.json` records their paths, dimensions and tiny blur placeholders; the custom Next.js image loader selects a suitable size without on-demand transformations. The intentionally cropped 2024 banner is retained as an art-directed display variant, rather than uploading a second archival original. Content hashes in filenames allow year-long immutable caching. To regenerate from the sibling `artistgrant-media-prepared` archive, run `python scripts/build_image_variants.py` with Pillow installed, upload the resulting `display-upload/` contents, and commit the updated catalogue.
+
+On the home page, judge portraits warm in the browser cache after the page finishes loading, with two low-priority downloads at a time. This is skipped for data-saving and very slow connections. Internal navigation uses Next.js Link prefetching. Winner videos only request media when approaching the viewport, and no longer download all films on initial page load.
+
+The reference site's MS Mincho webfont is self-hosted as a compact Latin subset in `public/fonts/artist-grant-mincho.woff2`, sourced from the existing site's custom CSS font URL. Desktop and mobile layouts follow the Squarespace reference, including the one-column mobile judges gallery and collapsible navigation.
+
+### Domain migration is pending
+
+`artistgrant.co.uk` is still the live Squarespace reference. The replacement is reviewed on `artistgrant-xi.vercel.app`; deploying there does not move the public domain. Do not activate Cloudflare, change nameservers/DNS, or cancel Squarespace until the replacement is approved and existing domain/email records are checked. DNS records and the Squarespace subscription have not been changed by this update.
+
 ## Learn More
 
 To learn more, take a look at the following resources:

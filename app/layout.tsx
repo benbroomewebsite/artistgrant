@@ -1,6 +1,9 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
 import './globals.css'
+
+const mincho = localFont({ src: '../public/fonts/artist-grant-mincho.woff2', display: 'swap', variable: '--font-mincho' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.artistgrant.co.uk'),
@@ -39,11 +42,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'light',
+  themeColor: '#dedede',
 }
 
 export default function RootLayout({
@@ -52,7 +52,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={mincho.variable}>
+      <head><link rel="preconnect" href={process.env.NEXT_PUBLIC_MEDIA_BASE_URL || 'https://pub-8a5603baa7c14b72b81d23aa7715704e.r2.dev'} /></head>
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
