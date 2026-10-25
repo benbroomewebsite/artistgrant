@@ -3,9 +3,22 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.artistgrant.co.uk'),
   title: 'Artist Grant',
   description: 'Artist Grant provides unrestricted financial support to artists worldwide. Learn about the grant, judges, shortlisting process, previous winners, and terms and conditions.',
-  generator: 'Next.js',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName: 'Artist Grant',
+    title: 'Artist Grant',
+    description: 'A yearly programme providing unrestricted financial support to artists worldwide.',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Artist Grant',
+    description: 'A yearly programme providing unrestricted financial support to artists worldwide.',
+  },
   icons: {
     icon: [
       {

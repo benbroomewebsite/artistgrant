@@ -5,6 +5,26 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pub-8a5603baa7c14b72b81d23aa7715704e.r2.dev',
+        pathname: '/media/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.artistgrant.co.uk',
+        pathname: '/media/**',
+      },
+    ],
+  },
+  async redirects() {
+    return [
+      { source: '/previouswinners/2024grant-ntd96', destination: '/previouswinners/2024', permanent: true },
+      { source: '/previouswinners/2023grant', destination: '/previouswinners/2023', permanent: true },
+      { source: '/previouswinners/2022grant-8clt8', destination: '/previouswinners/2022', permanent: true },
+      { source: '/previouswinners/2021grant-sbbp8', destination: '/previouswinners/2021', permanent: true },
+    ]
   },
   async headers() {
     return [{

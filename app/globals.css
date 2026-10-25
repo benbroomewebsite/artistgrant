@@ -178,23 +178,38 @@
 .nav-list a.is-active { text-decoration: underline; text-underline-offset: 0.18em; }
 .content-column { width: 55%; margin: 80px auto 0; padding: 0; font-size: 1.125vw; line-height: 1.5; letter-spacing: -0.035em; }
 .content-column p { margin: 0 0 15px; }
+.content-column > p + p { margin-top: 1.5em; }
 .content-column a { text-underline-offset: 0.16em; }
+.supporters a { text-decoration: underline; }
 .site-footer { width: 100%; box-sizing: border-box; margin: 0; padding: 520px 0 60px; text-align: center; font-size: 1.125vw; line-height: 1.5; }
 .site-footer a { text-underline-offset: 0.16em; }
 .image-space { background: transparent; }
-.judge-grid { width: 88%; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); column-gap: 34px; row-gap: 294px; }
+.judge-grid { width: 88%; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); column-gap: 34px; row-gap: 72px; }
 .judge-card { min-width: 0; }
 .judge-card p { margin: 16px 0 0; }
-.judge-image { width: 100%; aspect-ratio: 1 / 1; }
+.judge-image { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; }
+.judge-image img, .shortlist-image img, .winner-image img { object-fit: cover; }
 .shortlisting-page { width: 78%; text-align: center; }
 .shortlisting-page > p { margin: 0 auto 68px; }
-.shortlist-image { width: 72%; margin: 0 auto; aspect-ratio: 1.75 / 1; }
+.shortlist-image { position: relative; width: 72%; margin: 0 auto; aspect-ratio: 1.75 / 1; overflow: hidden; }
 .winners-page { width: 78%; text-align: center; }
 .winners-page h1, .terms-page h1 { font-size: inherit; font-weight: 700; margin: 0 0 52px; }
 .winner-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 58px 90px; }
 .winner-grid figure { margin: 0; }
-.winner-grid .image-space { aspect-ratio: 1.42 / 1; }
+.winner-grid a { display: block; text-decoration: none; }
+.winner-grid a:hover figcaption, .winner-grid a:focus-visible figcaption { text-decoration: underline; }
+.winner-image { position: relative; aspect-ratio: 1.42 / 1; overflow: hidden; }
 .winner-grid figcaption { margin-top: 26px; }
+.winner-detail-page { width: 70%; text-align: center; }
+.winner-story { display: grid; gap: 28px; text-align: left; }
+.winner-copy h1, .winner-copy h3, .winner-copy h4 { font-size: inherit; line-height: inherit; margin: 0; }
+.winner-copy p { margin: 0; }
+.winner-copy a { text-decoration: underline; }
+.winner-media { margin: 22px 0 0; }
+.winner-media img, .winner-media video { display: block; width: 100%; height: auto; }
+.winner-embed { position: relative; aspect-ratio: 16 / 9; }
+.winner-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.winner-story hr { width: 100%; margin: 10px 0 22px; border: 0; border-top: 1px solid #000; }
 .terms-page { width: 46%; font-size: 1.125vw; line-height: 1.5; }
 .terms-page h1 { text-align: center; margin-bottom: 54px; }
 .terms-copy h2 { font-size: inherit; margin: 27px 0 18px; }
@@ -206,8 +221,8 @@
   .nav-list { gap: 16px; flex-wrap: wrap; font-size: 5vw; }
   .content-column { width: 86%; margin-top: 50px; }
   .site-footer { padding-top: 360px; }
-  .judge-grid, .winner-grid { grid-template-columns: 1fr 1fr; width: 100%; gap: 90px 20px; }
-  .shortlisting-page, .winners-page, .terms-page { width: 86%; }
+  .judge-grid, .winner-grid { grid-template-columns: 1fr 1fr; width: 100%; gap: 56px 20px; }
+  .shortlisting-page, .winners-page, .winner-detail-page, .terms-page { width: 86%; }
   .shortlist-image { width: 100%; }
   .terms-page { font-size: 3.2vw; }
 }

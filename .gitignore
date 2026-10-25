@@ -12,4 +12,10 @@ __v0_jsx-dev-runtime.ts
 # Common ignores
 node_modules
 .next/
+*.tsbuildinfo
 .DS_Store
+
+# Media originals are archived locally and served from R2.
+public/media/
+__pycache__/
+*.pyc

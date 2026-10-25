@@ -1,4 +1,4 @@
-# artistgrant
+        # artistgrant
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
 
@@ -23,6 +23,18 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+## Importing Squarespace media
+
+With Python 3 and FFmpeg available, run:
+
+```bash
+python scripts/import_squarespace_media.py
+```
+
+The importer reads the live Squarespace sitemap and page blocks, downloads original images and the highest-quality self-hosted video renditions into `public/media`, and writes `public/media/manifest.json`. Public paths remain under `/media/...`, so the directory can later be mirrored to an R2 bucket without changing page content.
+
+Media is served from Ben's `artistgrant-media` R2 bucket (Cloudflare account `856d30a7c55ce0475ebcac06e973dc57`). Its public origin is `https://pub-8a5603baa7c14b72b81d23aa7715704e.r2.dev`. Set `NEXT_PUBLIC_MEDIA_BASE_URL` to override it, and update the image hostname in `next.config.mjs` when changing origins. `lib/media-paths.json` maps the previous media paths to 33 deduplicated objects (29 images and four videos). The origin can later be replaced with `https://media.artistgrant.co.uk` once DNS and the R2 custom domain are configured.
 
 ## Learn More
 
