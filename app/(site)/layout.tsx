@@ -1,9 +1,9 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
-import './globals.css'
+import '../globals.css'
 
-const mincho = localFont({ src: '../public/fonts/artist-grant-mincho.woff2', display: 'swap', variable: '--font-mincho' })
+const mincho = localFont({ src: '../../public/fonts/artist-grant-mincho.woff2', display: 'swap', variable: '--font-mincho' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.artistgrant.co.uk'),

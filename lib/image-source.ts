@@ -1,4 +1,5 @@
 import variants from './image-variants.json'
+import uploads from './generated/upload-variants.json'
 
 type DisplayImage = {
   width: number
@@ -11,7 +12,7 @@ export const judgeImageSizes = '(max-width: 769px) 88vw, calc((88vw - 180px) / 6
 
 export function imageDetails(src: string): DisplayImage | undefined {
   const path = src.startsWith('https://') ? new URL(src).pathname : src
-  return (variants as Record<string, DisplayImage>)[path]
+  return (variants as Record<string, DisplayImage>)[path] ?? (uploads as Record<string, DisplayImage>)[path]
 }
 
 export function displayImageUrl(src: string, width: number) {

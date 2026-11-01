@@ -44,6 +44,12 @@ On the home page, judge portraits warm in the browser cache after the page finis
 
 The reference site's MS Mincho webfont is self-hosted as a compact Latin subset in `public/fonts/artist-grant-mincho.woff2`, sourced from the existing site's custom CSS font URL. Desktop and mobile layouts follow the Squarespace reference, including the one-column mobile judges gallery and collapsible navigation.
 
+### Editing the winner pages
+
+Ben edits each grant year at `/keystatic`. Every save is a commit that redeploys the site, so there is no database to run. Setup and instructions: [docs/editor-setup.md](docs/editor-setup.md).
+
+Each year is one file in `content/winners/`, an ordered list of blocks. `scripts/build-winners.mjs` runs before `dev` and `build`. It collects those files into `lib/generated/winners.json`, makes the WebP sizes of images uploaded through the editor, and leaves out anything broken with a warning in the build log, so a save cannot break the build. Restart `pnpm dev` to see an edit on the site locally.
+
 ### Domain
 
 `www.artistgrant.co.uk` and `artistgrant.co.uk` point at this Vercel project through DNS records at Squarespace, which is still the registrar and DNS provider. Keep the domain registration active. Do not cancel the Squarespace website plan until the 2026 applications are confirmed to be stored somewhere else. If DNS moves to Cloudflare, keep the Vercel records set to DNS only.

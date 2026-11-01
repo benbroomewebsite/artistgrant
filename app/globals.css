@@ -135,6 +135,7 @@
 .winner-intro { width: calc(100% + 104.25px); margin-bottom: 55px; }
 .winner-intro p + p { margin-top: 15px; }
 .winner-copy:not(.winner-intro) p { font-size: .8453em; line-height: 1.5; }
+.winner-copy.winner-copy-large:not(.winner-intro) p { font-size: inherit; line-height: inherit; }
 .year-navigation { display: flex; justify-content: space-between; gap: 20px; margin-top: 80px; }
 .winner-story { display: grid; gap: 28px; text-align: left; }
 .winner-copy h1, .winner-copy h3, .winner-copy h4 { font-size: inherit; line-height: inherit; margin: 0; }

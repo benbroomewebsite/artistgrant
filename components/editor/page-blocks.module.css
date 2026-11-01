@@ -1,0 +1,37 @@
+.page, .banner { width: 100%; min-width: 0; font: 14px/1.5 system-ui, sans-serif; }
+.page, .page *, .banner, .banner * { box-sizing: border-box; }
+.heading { margin: 0; font-size: 16px; }
+.heading span { font-weight: normal; opacity: .65; }
+.page button { border: 1px solid #8886; border-radius: 5px; padding: 5px 10px; background: transparent; color: inherit; font: inherit; font-size: 13px; cursor: pointer; }
+.page button:hover:not(:disabled) { background: #8882; }
+.page button:disabled { opacity: .35; cursor: default; }
+.page :is(button, summary, [draggable]):focus-visible { outline: 2px solid #2878cf; outline-offset: 3px; }
+.help { margin: 8px 0 16px; font-size: 13px; line-height: 1.5; opacity: .8; }
+.section { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; padding: 12px; border: 1px solid #8884; border-radius: 8px; }
+.sectionHeading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.sectionHeading h4 { margin: 0; font-size: 15px; }
+.block { min-width: 0; border: 1px solid #8886; border-radius: 6px; background: #88808008; }
+.over { outline: 3px solid #2878cf; outline-offset: 2px; }
+.row { display: flex; align-items: center; gap: 12px; padding: 8px; }
+.handle { display: flex; flex: none; align-items: center; gap: 8px; cursor: grab; }
+.handle:active { cursor: grabbing; }
+.picture { display: flex; flex: none; align-items: center; justify-content: center; width: 72px; height: 54px; overflow: hidden; border-radius: 3px; background: #8882; font-size: 11px; text-align: center; }
+.picture img { width: 100%; height: 100%; object-fit: cover; }
+.symbol { font-size: 18px; opacity: .7; }
+.label { flex: 1; min-width: 0; }
+.label strong { display: block; font-size: 12px; font-weight: 600; opacity: .7; }
+.label p { margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.actions { display: flex; flex: none; flex-wrap: wrap; gap: 6px; }
+.details { border-top: 1px solid #8884; }
+.details summary { padding: 6px 12px; font-size: 13px; cursor: pointer; }
+.fields { display: flex; flex-direction: column; gap: 16px; padding: 12px; }
+.fields > * { min-width: 0; }
+.add { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; }
+.addArtist { display: flex; flex-wrap: wrap; gap: 8px; }
+.empty { padding: 24px; text-align: center; border: 1px dashed #8888; }
+.status { min-height: 1.5em; margin: 8px 0 0; font-size: 13px; }
+.bannerPicture { width: 240px; max-width: 100%; height: 135px; margin-bottom: 12px; }
+@media (max-width: 640px) {
+  .row { flex-wrap: wrap; }
+  .label { flex-basis: 50%; }
+}

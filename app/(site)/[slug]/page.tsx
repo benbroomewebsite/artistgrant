@@ -3,7 +3,8 @@ import { SiteImage as Image } from '@/components/site-image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { judges, terms, TextPage } from '@/components/site-layout'
-import { judgeImages, shortlistImage, winnerYears } from '@/lib/media'
+import { judgeImages, shortlistImage } from '@/lib/media'
+import { winnerPages } from '@/lib/winners'
 import { mediaUrl } from '@/lib/media-url'
 import { judgeImageSizes } from '@/lib/image-source'
 
@@ -47,7 +48,7 @@ function ShortlistingPage() {
 }
 
 function PreviousWinnersPage() {
-  return <TextPage active="Previous Winners" className="winners-page"><h1>Previous Winners</h1><div className="winner-grid">{winnerYears.map(({ year, cover }) => <figure key={year}><Link href={`/previouswinners/${year}`}><div className="image-space winner-image"><Image src={mediaUrl(cover)} alt="" fill sizes="(max-width: 769px) 88vw, 40vw" /></div><figcaption>{year} Grant</figcaption></Link></figure>)}</div></TextPage>
+  return <TextPage active="Previous Winners" className="winners-page"><h1>Previous Winners</h1><div className="winner-grid">{winnerPages.map(({ year, cover }) => <figure key={year}><Link href={`/previouswinners/${year}`}><div className="image-space winner-image">{cover && <Image src={mediaUrl(cover)} alt="" fill sizes="(max-width: 769px) 88vw, 40vw" />}</div><figcaption>{year} Grant</figcaption></Link></figure>)}</div></TextPage>
 }
 
 function TermsPage() {

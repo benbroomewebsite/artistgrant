@@ -6,8 +6,9 @@ __v0_jsx-dev-runtime.ts
 .v0-trash/
 .vercel/
 
-# Environment variables
-.env*.local
+# Environment variables, including the editor's GitHub secrets
+.env*
+!.env.example
 
 # Common ignores
 node_modules
@@ -19,3 +20,7 @@ node_modules
 public/media/
 __pycache__/
 *.pyc
+
+# Collected from content/winners by scripts/build-winners.mjs.
+lib/generated/
+public/generated/

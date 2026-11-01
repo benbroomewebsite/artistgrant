@@ -1,14 +1,12 @@
 import type { MetadataRoute } from 'next'
+import { winnerPages } from '@/lib/winners'
 
 const routes = [
   '',
   '/judges',
   '/shortlisting',
   '/previouswinners',
-  '/previouswinners/2024',
-  '/previouswinners/2023',
-  '/previouswinners/2022',
-  '/previouswinners/2021',
+  ...winnerPages.map(({ year }) => `/previouswinners/${year}`),
   '/tandcs',
 ]
 
