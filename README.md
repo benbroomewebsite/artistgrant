@@ -44,9 +44,9 @@ On the home page, judge portraits warm in the browser cache after the page finis
 
 The reference site's MS Mincho webfont is self-hosted as a compact Latin subset in `public/fonts/artist-grant-mincho.woff2`, sourced from the existing site's custom CSS font URL. Desktop and mobile layouts follow the Squarespace reference, including the one-column mobile judges gallery and collapsible navigation.
 
-### Domain migration is pending
+### Domain
 
-`artistgrant.co.uk` is still the live Squarespace reference. The replacement is reviewed on `artistgrant-xi.vercel.app`; deploying there does not move the public domain. Do not activate Cloudflare, change nameservers/DNS, or cancel Squarespace until the replacement is approved and existing domain/email records are checked. DNS records and the Squarespace subscription have not been changed by this update.
+`www.artistgrant.co.uk` and `artistgrant.co.uk` point at this Vercel project through DNS records at Squarespace, which is still the registrar and DNS provider. Keep the domain registration active. Do not cancel the Squarespace website plan until the 2026 applications are confirmed to be stored somewhere else. If DNS moves to Cloudflare, keep the Vercel records set to DNS only.
 
 ## Learn More
 

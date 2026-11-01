@@ -20,6 +20,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/apply', destination: '/', permanent: true },
       { source: '/previouswinners/2024grant-ntd96', destination: '/previouswinners/2024', permanent: true },
       { source: '/previouswinners/2023grant', destination: '/previouswinners/2023', permanent: true },
       { source: '/previouswinners/2022grant-8clt8', destination: '/previouswinners/2022', permanent: true },
