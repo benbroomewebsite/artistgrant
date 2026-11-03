@@ -9,6 +9,9 @@ import Link from 'next/link'
 import { SiteVideo } from '@/components/site-video'
 import winnerContent from '@/content/winner-pages.json'
 
+// Every year is built in advance; any other year gets the 404 page without running server code.
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return winnerYears.map(({ year }) => ({ year }))
 }

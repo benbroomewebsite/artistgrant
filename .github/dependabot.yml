@@ -1,0 +1,34 @@
+# Dependabot opens a pull request when a newer version of a package is out.
+# Each one is built by the Check workflow and by Vercel before anything is merged.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '07:00'
+      timezone: Europe/London
+    # Minor and patch updates come together in one pull request. A major version,
+    # which can need code changes, gets a pull request of its own.
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    # Wait a few days before proposing a new release, so a compromised package is
+    # usually withdrawn first. Next.js fixes are proposed at once, as pnpm-workspace.yaml
+    # also allows. Security updates never wait.
+    cooldown:
+      default-days: 3
+      exclude: [next, '@next/*']
+    ignore:
+      # Follows the Node.js version in package.json "engines": change both together.
+      - dependency-name: '@types/node'
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ['*']

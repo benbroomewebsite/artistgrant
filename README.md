@@ -48,6 +48,14 @@ The reference site's MS Mincho webfont is self-hosted as a compact Latin subset 
 
 `www.artistgrant.co.uk` and `artistgrant.co.uk` point at this Vercel project through DNS records at Squarespace, which is still the registrar and DNS provider. Keep the domain registration active. Do not cancel the Squarespace website plan until the 2026 applications are confirmed to be stored somewhere else. If DNS moves to Cloudflare, keep the Vercel records set to DNS only.
 
+### Updates and checks
+
+Dependabot proposes package updates as pull requests every Monday: minor and patch versions together, each major version on its own. Next.js releases are proposed straight away; other packages wait three days, so a compromised release is usually withdrawn first. With Dependabot alerts and security updates switched on (Settings → Advanced Security), security fixes arrive as soon as GitHub knows of them.
+
+The Check workflow builds every pull request and every change to `main`. Merge an update once its check and the Vercel preview pass. Every morning it also checks the packages the site runs on for serious security problems; a failure emails whoever last changed its schedule. GitHub pauses scheduled workflows after 60 days without a commit; re-enable it from the Actions tab.
+
+The site builds on Node.js 24 (`engines` in `package.json`), on Vercel and in the check. Every page is built in advance, and addresses that are not pages get the 404 page without running server code.
+
 ## Learn More
 
 To learn more, take a look at the following resources:

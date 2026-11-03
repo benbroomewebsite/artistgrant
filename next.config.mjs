@@ -35,6 +35,9 @@ const nextConfig = {
         { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
         { key: 'Strict-Transport-Security', value: 'max-age=63072000' },
         { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        // Other sites may link to these pages but not show them inside a frame.
+        { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+        { key: 'Content-Security-Policy', value: "frame-ancestors 'self'" },
       ],
     }]
   },
