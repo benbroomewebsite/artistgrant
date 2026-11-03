@@ -15,8 +15,8 @@ updates:
       minor-and-patch:
         update-types: [minor, patch]
     # Wait a few days before proposing a new release, so a compromised package is
-    # usually withdrawn first. Next.js fixes are proposed at once, as pnpm-workspace.yaml
-    # also allows. Security updates never wait.
+    # usually withdrawn first. Next.js releases are proposed without waiting, as
+    # pnpm-workspace.yaml also allows.
     cooldown:
       default-days: 3
       exclude: [next, '@next/*']

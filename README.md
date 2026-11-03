@@ -50,7 +50,7 @@ The reference site's MS Mincho webfont is self-hosted as a compact Latin subset 
 
 ### Updates and checks
 
-Dependabot proposes package updates as pull requests every Monday: minor and patch versions together, each major version on its own. Next.js releases are proposed straight away; other packages wait three days, so a compromised release is usually withdrawn first. With Dependabot alerts and security updates switched on (Settings → Advanced Security), security fixes arrive as soon as GitHub knows of them.
+Dependabot proposes package updates as pull requests every Monday: minor and patch versions together, each major version on its own. Other packages must have been out for three days, so a compromised release is usually withdrawn first; Next.js releases are proposed without waiting.
 
 The Check workflow builds every pull request and every change to `main`. Merge an update once its check and the Vercel preview pass. Every morning it also checks the packages the site runs on for serious security problems; a failure emails whoever last changed its schedule. GitHub pauses scheduled workflows after 60 days without a commit; re-enable it from the Actions tab.
 
