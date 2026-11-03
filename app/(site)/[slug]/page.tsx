@@ -15,6 +15,9 @@ const pageMeta = {
   tandcs: ['Terms and Conditions | Artist Grant', 'Read the Artist Grant 2026 eligibility, assessment, application, and judging terms.'],
 } as const
 
+// Every page is built in advance; any other address gets the 404 page without running server code.
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return Object.keys(pageMeta).map((slug) => ({ slug }))
 }

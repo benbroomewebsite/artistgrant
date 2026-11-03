@@ -9,6 +9,9 @@ import { SiteVideo } from '@/components/site-video'
 import { WinnerText } from '@/components/winner-text'
 import { winnerPages } from '@/lib/winners'
 
+// Every year is built in advance; any other year gets the 404 page without running server code.
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return winnerPages.map(({ year }) => ({ year }))
 }
